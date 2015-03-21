@@ -1,0 +1,38 @@
+package Ants;
+
+import java.util.ArrayList;
+
+import zen.core.Zen;
+
+public class AntSimulation {
+
+	public static void main(String[] args) {
+		Zen.create(500, 500);
+	
+		ArrayList<Ant> ants = new ArrayList<Ant>();
+		Anthill hill = new Anthill(220,200);
+		Food f = new Food(100, 100, 100);
+		
+		while(true){
+			Zen.setBackground("tan");
+			f.draw();
+			hill.draw();
+			if (Zen.dice(6) == 1){
+				ants.add(new Ant(hill));
+				
+			}
+			for (int i = 0; i < ants.size(); i ++){
+				if(ants.get(i).canEat){
+					ants.get(i).eat(f);
+				}
+				else{
+					ants.get(i).draw();
+					ants.get(i).move();
+				}
+			}
+			
+		Zen.buffer(30);	
+		}
+	}
+
+}
