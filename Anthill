@@ -1,0 +1,17 @@
+package Ants;
+
+import zen.core.Zen;
+
+public class Anthill {
+int x;
+int y;
+	
+	public Anthill(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	public void draw() {
+		Zen.setColor("red");
+		Zen.fillOval(x, y, 70, 70);
+	}
+}
