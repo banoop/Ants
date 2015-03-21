@@ -1,0 +1,26 @@
+package Ants;
+
+import zen.core.Zen;
+
+public class Food {
+int x;
+int y;
+int size;
+
+	public Food(int x, int y, int size){
+		this.x = x;
+		this.y = y;
+		this.size = size;
+
+	}
+	public void draw(){
+		
+		Zen.setColor("brown");
+		Zen.fillRect(x,y,size,size);	
+	}
+	
+	public void eat() {
+		size = size - 1;		
+	}	
+	
+}
